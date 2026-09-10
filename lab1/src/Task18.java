@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /*
@@ -10,7 +11,7 @@ import java.util.Scanner;
 
 public class Task18 {
     public static void main(String[] args) {
-        ArrayList<Integer> numbers = new ArrayList<>();
+        List<Integer> numbers = new ArrayList<>();
         Scanner in = new Scanner(System.in);
         int count = 0;
 
