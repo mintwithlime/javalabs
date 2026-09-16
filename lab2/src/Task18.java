@@ -3,8 +3,10 @@
 четным номером — с недостатком, в строках с нечетным номером — с
 избытком.*/
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class Task18 {
     public static void main(String[] args) {
@@ -47,6 +49,7 @@ public class Task18 {
 
 
     public static int[][] roundMatrix(double[][] matrix) {
+        /*
         int[][] result = new int[matrix.length][matrix[0].length];
 
         for (int i = 0; i < matrix.length; i++) {
@@ -62,5 +65,11 @@ public class Task18 {
         }
 
         return result;
+         */
+        return IntStream.range(0, matrix.length)
+                .mapToObj(i -> (i+1) % 2 == 0
+                ? Arrays.stream(matrix[i]).mapToInt(v -> (int) Math.floor(v)).toArray()
+                                : Arrays.stream(matrix[i]).mapToInt(v -> (int) Math.ceil(v)).toArray()
+                ).toArray(int[][]::new);
     }
 }

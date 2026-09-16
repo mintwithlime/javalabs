@@ -6,7 +6,11 @@
 один положительный элемент — удалить.*/
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Scanner;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Task6 {
     public static void main(String[] args) {
@@ -41,6 +45,7 @@ public class Task6 {
     }
 
     public static int countPos(int[] row) {
+        /*
         int count = 0;
         for (int el : row) {
             if (el > 0) {
@@ -49,9 +54,14 @@ public class Task6 {
         }
 
         return count;
+        */
+        return (int) Arrays.stream(row)
+                .filter(el -> el > 0)
+                .count();
     }
 
     public static int countSum(int[] row) {
+        /*
         int sum = 0;
         int positiveSeen = 0;
         int amountOfPos = countPos(row);
@@ -77,6 +87,18 @@ public class Task6 {
         }
 
         return sum;
+        */
+        int[] positiveIndices =  IntStream.range(0, row.length)
+                .filter(i -> row[i] > 0)
+                .limit(2)
+                .toArray();
+
+        if (positiveIndices.length < 2) {
+            return 0;
+        }
+
+        return IntStream.range(positiveIndices[0] + 1, positiveIndices[1])
+                .map(i -> row[i]).sum();
     }
 
     public static void printMatrix(int[][] matrix) {
@@ -90,6 +112,7 @@ public class Task6 {
     }
 
     public static int[][] sortMatrix(int[][] matrix) {
+        /*
         ArrayList<int[]> newArray = new ArrayList<>();
 
         for (int[] row : matrix) {
@@ -118,5 +141,11 @@ public class Task6 {
         }
 
         return newArray.toArray(new int[0][]);
+         */
+
+        return Arrays.stream(matrix).
+                filter(r -> countPos(r) > 1)
+                .sorted(Comparator.comparingInt(Task6::countSum))
+                .toArray(int[][]::new);
     }
 }
