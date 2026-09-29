@@ -1,0 +1,10 @@
+type;name;weight;price;transparency;extra1;extra2
+PRECIOUS;Diamond;1.5;5000;5;VVS1;true
+PRECIOUS;Ruby;2.0;3200;4;SI1;false
+SEMI;Amethyst;3.2;80;3;7.0;Brazil
+SEMI;Garnet;1.8;120;2;7.5;Russia
+PRECIOUS;Sapphire;abc;2800;4;VS2;true
+PRECIOUS;Emerald;2.1;4500;9;VVS2;false
+SEMI;Topaz;-1.0;60;3;8.0;India
+SEMI;Opal;1.0;NotANumber;1;6.5;Australia
+INVALID;Unknown;1.0;100;3;X;true

@@ -6,14 +6,14 @@ public abstract class Stone {
     private double price; //for 1 carat
     private int transparency; //form 1 to 5
 
-    public Stone(String model, double weight, double price, int transparency) {
-        this.name = model;
+    public Stone(String name, double weight, double price, int transparency) {
+        this.name = name;
         this.weight = weight;
         this.price = price;
         this.transparency = transparency;
     }
 
-    public String getModel() {
+    public String getName() {
         return this.name;
     }
 

@@ -21,13 +21,13 @@ public class PreciousStone extends Stone {
 
     @Override
     public String toString() {
-        return "PreciousStone{" +
-                "model='" + getModel() + '\'' +
-                ", weight=" + getWeight() + " ct" +
-                ", price per ct=" + getPrice() +
-                ", transparency=" + getTransparency() +
-                ", clarityGrade=" + clarityGrade +
-                ", hasCertificate=" + hasCertificate +
+        return "PreciousStone {" +
+                "name= '" + getName() + '\'' +
+                ", weight= " + getWeight() + " ct" +
+                ", price per ct= " + getPrice() +
+                ", transparency= " + getTransparency() +
+                ", clarityGrade= " + clarityGrade +
+                ", hasCertificate= " + hasCertificate +
                 '}';
     }
 }

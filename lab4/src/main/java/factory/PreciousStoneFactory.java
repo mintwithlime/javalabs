@@ -19,7 +19,7 @@ public class PreciousStoneFactory extends StoneFactory {
 
             return new PreciousStone(name, weight, price, transparency, clarity, hasCertificate);
         } catch (IllegalArgumentException err) {
-            throw new InvalidStoneDataException("Invalid precious stone data for '" + name + "': " + err.getMessage(), err);
+            throw new InvalidStoneDataException("Invalid precious stone data for '" + nameStr + "': " + err.getMessage(), err);
         }
     }
     private boolean parseBoolean(String string) {

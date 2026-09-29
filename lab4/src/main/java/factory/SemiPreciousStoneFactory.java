@@ -20,7 +20,7 @@ public class SemiPreciousStoneFactory extends StoneFactory {
                 throw new IllegalArgumentException("hardness out of range: " + hardnessMohs);
             }
 
-            return new SemiPreciousStone(name, weight, price, transparency, hardnessMohs, extra2);
+            return new SemiPreciousStone(name, weight, price, transparency, hardnessMohs, region);
         } catch (IllegalArgumentException err) {
             throw new InvalidStoneDataException("Invalid semi-precious stone data for '" + nameStr + "': " + err.getMessage(), err);
         }
