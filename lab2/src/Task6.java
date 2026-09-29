@@ -5,12 +5,10 @@
 которых все элементы отрицательные — удалить. Строки у которых только
 один положительный элемент — удалить.*/
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Scanner;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class Task6 {
     public static void main(String[] args) {
