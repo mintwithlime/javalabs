@@ -1,8 +1,8 @@
 package model;
 
 public class PreciousStone extends Stone {
-    private Clarity clarityGrade;
-    private boolean hasCertificate;
+    private final Clarity clarityGrade;
+    private final boolean hasCertificate;
 
     public PreciousStone(String name, double weight, double price, int transparency,
                          Clarity clarityGrade, boolean hasCertificate) {

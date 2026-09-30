@@ -1,12 +1,12 @@
 package model;
 
 public abstract class Stone {
-    private String name;
-    private double weight; //in carats
-    private double price; //for 1 carat
-    private int transparency; //form 1 to 5
+    private final String name;
+    private final double weight; // in carats
+    private final double price; // for 1 carat
+    private final int transparency; // from 1 to 5
 
-    public Stone(String name, double weight, double price, int transparency) {
+    protected Stone(String name, double weight, double price, int transparency) {
         this.name = name;
         this.weight = weight;
         this.price = price;
@@ -27,6 +27,10 @@ public abstract class Stone {
 
     public int getTransparency() {
         return this.transparency;
+    }
+
+    public double getTotalPrice() {
+        return this.price * this.weight;
     }
 }
 

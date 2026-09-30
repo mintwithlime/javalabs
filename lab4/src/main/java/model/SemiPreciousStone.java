@@ -1,8 +1,8 @@
 package model;
 
 public class SemiPreciousStone extends Stone {
-    private double hardnessMohs; // Mohs Hardness Scale (7.0)
-    private String originRegion;
+    private final double hardnessMohs; // Mohs Hardness Scale (7.0)
+    private final String originRegion;
 
     public SemiPreciousStone(String name, double weight, double price, int transparency,
                              double hardnessMohs, String originRegion) {
