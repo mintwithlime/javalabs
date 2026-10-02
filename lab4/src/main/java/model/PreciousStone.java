@@ -15,7 +15,7 @@ public class PreciousStone extends Stone {
         return this.clarityGrade;
     }
 
-    public boolean isHasCertificate() {
+    public boolean hasCertificate() {
         return this.hasCertificate;
     }
 
