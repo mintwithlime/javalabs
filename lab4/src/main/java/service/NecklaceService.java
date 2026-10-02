@@ -50,8 +50,8 @@ public class NecklaceService {
         for (Stone stone : stones) {
             if (spent + stone.getTotalPrice() <= budget) {
                 selectedStones.add(stone);
-                logger.debug("Stone added: {}, cost: {}", stone.getName(), stone.getTotalPrice());
                 spent += stone.getTotalPrice();
+                logger.debug("Stone added: {}, cost: {}, left: {}", stone.getName(), stone.getTotalPrice(), budget - spent);
             } else {
                 logger.debug("Stone skipped: {}, cost: {}, budget left: {}",
                         stone.getName(), stone.getTotalPrice(), budget - spent);
