@@ -1,0 +1,11 @@
+11:36:34.546 INFO  StoneFileReader - Read file: src/main/resources/stones.txt
+11:36:34.594 DEBUG StoneFileReader - Line 2: created PreciousStone {name= 'Diamond', weight= 1.5 ct, price per ct= 5000.0, transparency= 5, clarityGrade= VVS1, hasCertificate= true}
+11:36:34.596 DEBUG StoneFileReader - Line 3: created PreciousStone {name= 'Ruby', weight= 2.0 ct, price per ct= 3200.0, transparency= 4, clarityGrade= SI1, hasCertificate= false}
+11:36:34.608 DEBUG StoneFileReader - Line 4: created SemiPreciousStone {name= 'Amethyst', weight= 3.2 ct, price per ct= 80.0, transparency= 3, hardnessMohs= 7.0, originRegion= 'Brazil'}
+11:36:34.609 DEBUG StoneFileReader - Line 5: created SemiPreciousStone {name= 'Garnet', weight= 1.8 ct, price per ct= 120.0, transparency= 2, hardnessMohs= 7.5, originRegion= 'Russia'}
+11:36:34.611 WARN  StoneFileReader - Line 6 skipped: Invalid precious stone data for 'Sapphire': For input string: "abc"
+11:36:34.612 WARN  StoneFileReader - Line 7 skipped: Invalid precious stone data for 'Emerald': transparency out of range: 9
+11:36:34.619 WARN  StoneFileReader - Line 8 skipped: Invalid semi-precious stone data for 'Topaz': weight cannot be non-positive: -1.0
+11:36:34.622 WARN  StoneFileReader - Line 9 skipped: Invalid semi-precious stone data for 'Opal': For input string: "NotANumber"
+11:36:34.623 WARN  StoneFileReader - Line 10 skipped: unknown stone type INVALID
+11:36:34.624 INFO  StoneFileReader - Loaded 4 stones from src/main/resources/stones.txt
