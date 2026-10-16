@@ -42,12 +42,7 @@ public class Main {
         System.out.println("\nNot returned:");
         notReturned.forEach(System.out::println);
 
-        List<Catalog.IssueRecord> petrovRecords = catalog.findRecords(new RecordFilter() {
-            @Override
-            public boolean test(Catalog.IssueRecord record) {
-                return record.getReader().equals("Ne Ya");
-            }
-        });
+        List<Catalog.IssueRecord> petrovRecords = catalog.findRecords(record -> record.getReader().equals("Ne Ya"));
         System.out.println("\nNe Ya's records:");
         petrovRecords.forEach(System.out::println);
 
