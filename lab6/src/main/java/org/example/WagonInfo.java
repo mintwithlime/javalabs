@@ -5,7 +5,7 @@ public interface WagonInfo {
     String getDestination();
     String getOwner();
     WagonStatus getStatus();
-    double getTareWeight();
+    double getTareWeight(); // in tons
     void setOwner(String owner);
     double getTotalWeight();
 }

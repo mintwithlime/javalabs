@@ -3,26 +3,27 @@ package org.example;
 public abstract class Wagon implements WagonInfo, Transportable, Maintainable {
     private static final int MAX_TRIPS = 3;
     private final String registrationNumber;
-    private final double weight;
+    private final double tareWeight;
     private String owner;
     private WagonStatus status;
     private String destination;
-    private int count;
+    private int tripsSinceService;
 
-    protected Wagon(String registrationNumber, double weight) {
+    protected Wagon(String registrationNumber, double tareWeight, String owner) {
         if (registrationNumber == null || registrationNumber.isBlank()) {
             throw new IllegalArgumentException("registrationNumber cannot be null or blank");
         }
 
-        if (weight <= 0) {
+        if (tareWeight <= 0) {
             throw new IllegalArgumentException("weight cannot be negative or 0");
         }
 
         this.registrationNumber = registrationNumber;
-        this.weight = weight;
+        this.tareWeight = tareWeight;
         this.status = WagonStatus.READY_TO_WORK;
         this.destination = null;
-        this.count = 0;
+        this.tripsSinceService = 0;
+        setOwner(owner);
     }
 
     protected void requireStatus(WagonStatus expected) {
@@ -54,7 +55,7 @@ public abstract class Wagon implements WagonInfo, Transportable, Maintainable {
 
     @Override
     public double getTareWeight() {
-        return weight;
+        return tareWeight;
     }
 
     @Override
@@ -89,14 +90,14 @@ public abstract class Wagon implements WagonInfo, Transportable, Maintainable {
         requireStatus(WagonStatus.IN_TRANSIT);
 
         this.status = WagonStatus.UNLOADING;
-        count++;
+        tripsSinceService++;
     }
 
     @Override
     public void service() {
         requireStatus(WagonStatus.READY_TO_WORK);
 
-        count = 0;
+        tripsSinceService = 0;
     }
 
     @Override
@@ -111,7 +112,7 @@ public abstract class Wagon implements WagonInfo, Transportable, Maintainable {
         requireStatus(WagonStatus.UNDER_REPAIR);
 
         this.status = WagonStatus.READY_TO_WORK;
-        count = 0;
+        tripsSinceService = 0;
     }
 
     protected void finishLoading() {
@@ -122,10 +123,12 @@ public abstract class Wagon implements WagonInfo, Transportable, Maintainable {
     protected void finishUnloading() {
         requireStatus(WagonStatus.UNLOADING);
 
-        if (count == MAX_TRIPS) {
+        if (tripsSinceService >= MAX_TRIPS) {
             this.status = WagonStatus.NEEDS_REPAIR;
         } else {
-            this.status = WagonStatus.READY_TO_DEPART;
+            this.status = WagonStatus.READY_TO_WORK;
         }
+
+        this.destination = null;
     }
 }
