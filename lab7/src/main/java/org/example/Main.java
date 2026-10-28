@@ -40,7 +40,7 @@ public class Main {
         IntUnaryOperator counter2 = value -> countDigit(value, digit);
         System.out.println(counter2.applyAsInt(x));
 
-        //TASK 30Последовательность координат вершин многоугольника задана массивом чисел.
+        //TASK 30 Последовательность координат вершин многоугольника задана массивом чисел.
         // Определить, лежит ли точка внутри многоугольника.
         double[] square = {0, 0, 4, 0, 4, 4, 0, 4};
 
@@ -53,7 +53,7 @@ public class Main {
         System.out.println(checker2.test(5.0, 2.0));
     }
 
-    private static int countDigit(int x, int digit) {
+    static int countDigit(int x, int digit) {
         int count = 0;
         int n = Math.abs(x);
         if (n == 0) {
@@ -69,7 +69,7 @@ public class Main {
         return count;
     }
 
-    private static boolean isInside(double[] polygon, double x, double y) {
+    static boolean isInside(double[] polygon, double x, double y) {
         if (polygon == null || polygon.length % 2 != 0 || polygon.length < 6) {
             throw new IllegalArgumentException("polygon must contain at least 3 vertices (x, y pairs)");
         }
