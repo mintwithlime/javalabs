@@ -35,7 +35,7 @@ public class Task6A {
         };
     }
 
-    //By String methods
+    //With String methods
     static String processWithString(String text, int flag, char symbol, int k) {
         if (text == null) {
             throw new IllegalArgumentException("text cannot be null");
@@ -48,7 +48,7 @@ public class Task6A {
         return String.join("\n", lines);
     }
 
-    //By Stream
+    //With Stream
     static String processWithStream(String text, int flag, char symbol, int k) {
         if (text == null) {
             throw new IllegalArgumentException("text cannot be null");
